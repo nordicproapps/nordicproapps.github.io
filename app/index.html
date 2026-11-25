@@ -221,6 +221,61 @@ p{margin:0}
 .wmsg{min-height:1.2em;font-size:.9rem;color:var(--bad);text-align:center;margin:0}
 .spin{width:18px;height:18px;border-radius:50%;border:2.5px solid #c7c7c7;border-top-color:#1a73e8;animation:spin .8s linear infinite;flex:none}@keyframes spin{to{transform:rotate(360deg)}}
 .synccard{display:flex;align-items:center;gap:14px;margin:0 0 16px;padding:12px 16px;border-radius:16px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px dashed color-mix(in srgb,var(--accent) 45%,var(--line))}.synccard .ic{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,var(--paper));font-size:18px}.synccard small{display:block;color:var(--muted)}.synccard .go{margin-inline-start:auto;font-weight:700;color:var(--accent)}
+/* ---- features: progress ring, badges, final test, certificate, game, prompts ---- */
+.prog2{display:flex;align-items:center;gap:14px;padding:12px 14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:16px;color:#fff;text-decoration:none}
+.prog2 .ring{width:74px;height:74px;flex:none}.ring .rbg{fill:none;stroke:rgba(255,255,255,.25);stroke-width:8}.ring .rfg{fill:none;stroke:#fff;stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .8s ease}
+.ring text{fill:#fff;font:700 17px var(--f-body)}
+.pinfo{display:flex;flex-direction:column;gap:3px;min-width:0}.pinfo strong{font-size:1.1rem}.pinfo small{opacity:.9}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.pchips span{background:rgba(255,255,255,.18);border-radius:999px;padding:3px 9px;font-size:.8rem;white-space:nowrap}
+.gamecard{display:flex;align-items:center;gap:14px;margin:0 0 12px;padding:14px 16px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(120deg,#E07A3F,#C2417A 60%,#7B4FB3);box-shadow:0 10px 24px -16px rgba(194,65,122,.8)}
+.gamecard .gicon{font-size:26px;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.2)}.gamecard small{display:block;opacity:.92}.gamecard .go{margin-inline-start:auto;font-weight:700}
+.fcard{display:flex;gap:14px;align-items:flex-start;margin:0 0 18px;padding:16px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.fcard.ready{border-color:color-mix(in srgb,#c9a24a 60%,var(--line));background:color-mix(in srgb,#c9a24a 8%,var(--paper))}
+.fcard .fi{font-size:30px;line-height:1}.fcard p{margin:4px 0 10px;color:var(--muted)}
+.askcard{margin:0 0 16px;padding:14px 16px;border-radius:16px;background:var(--paper);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line))}.askcard p{margin:0 0 10px}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.badge{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 10px;border-radius:16px;border:1px solid var(--line);background:var(--paper);opacity:.55}
+.badge.on{opacity:1;border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}.badge .bi{font-size:34px}.badge small{color:var(--muted)}
+.fbar{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin:8px 0 14px}.fbar i{display:block;height:100%;background:var(--accent)}
+.fopts{display:grid;gap:10px;margin:14px 0}
+.fopt{text-align:start;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:500 1rem/1.4 var(--f-body);cursor:pointer}
+.fopt.good{border-color:var(--ok);background:var(--ok-bg)}.fopt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.fres{text-align:center}.fres .big{font-size:64px}
+.cname{display:flex;flex-direction:column;gap:6px;margin:6px 0 14px;font-weight:600}.cname input{font:500 1.05rem var(--f-body);padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.certcv{width:100%;height:auto;border-radius:10px;box-shadow:0 12px 30px -18px rgba(0,0,0,.5);background:#fff}
+.small{font-size:.85rem}
+.confetti{position:fixed;inset:0;z-index:80;pointer-events:none}
+.game{text-align:center}.ghead .gbig,.game .gbig{font-size:52px;display:block}.gbest{font-weight:700;color:var(--accent)}
+.gmodes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.gmode{display:flex;flex-direction:column;align-items:center;gap:4px;padding:18px 10px;border-radius:18px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font:inherit}
+.gmode span{font-size:30px}.gmode small{color:var(--muted)}.gmode:active{transform:scale(.97)}
+.gsnd{display:inline-flex;gap:8px;align-items:center;color:var(--muted)}
+.ghud{display:flex;align-items:center;justify-content:space-between;gap:10px}.gstat{display:flex;flex-direction:column;min-width:64px}.gstat small{color:var(--muted);font-size:.75rem}.gstat strong{font:700 1.6rem/1 var(--f-display);font-variant-numeric:tabular-nums}
+.gtime.hurry strong{color:var(--bad);animation:pulse .6s ease infinite alternate}@keyframes pulse{to{transform:scale(1.15)}}
+.gcombo{font-weight:700;color:#E07A3F;min-height:1.2em}.gcombo.on{animation:pop .3s ease}
+.gtbar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:10px 0 16px}.gtbar i{display:block;height:100%;background:linear-gradient(90deg,#6ACDBF,#EDB571,#EE98B3);transition:width .2s linear}
+.gcard{padding:6px 0}.gq{display:flex;gap:14px;align-items:center;text-align:start;padding:14px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}
+.gq.rev{flex-direction:column;text-align:center}.galias{font:700 3rem/1 var(--f-mono);color:var(--accent);padding:8px 0}
+.gic{width:52px;height:52px;flex:none;border-radius:12px;background:#fff;padding:6px;object-fit:contain}.gk{display:grid;place-items:center;font:700 1.1rem var(--f-mono);color:#333}
+.gcmd{display:block;font:700 1.3rem var(--f-mono)}.gq small{display:block;color:var(--muted)}
+.gopts{display:grid;gap:10px;margin-top:14px}.gopts.grid{grid-template-columns:1fr 1fr}
+.gopt{padding:16px 10px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font:inherit}
+.gopt.key{font:700 1.6rem var(--f-mono)}.gopt.wide{display:flex;gap:10px;align-items:center;text-align:start}.gopt.wide img{width:32px;height:32px;background:#fff;border-radius:8px;padding:3px}.gopt.wide small{display:block;color:var(--muted);font-size:.8rem}
+.gopt.good{border-color:var(--ok);background:var(--ok-bg);animation:pop .3s ease}.gopt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.gtype{display:flex;gap:8px;margin-top:14px}.gtype input{flex:1;min-width:0;font:700 1.5rem var(--f-mono);text-transform:uppercase;text-align:center;padding:12px;border-radius:14px;border:2px solid var(--accent);background:var(--paper);color:var(--ink)}
+.gskip{margin-top:12px;background:none;border:0;color:var(--muted);font:inherit;cursor:pointer}
+.gfx{min-height:1.6em;font-weight:700;font-size:1.2rem;margin:10px 0 0}.gfx.good{color:var(--ok)}.gfx.bad{color:var(--bad)}
+.pop{animation:pop .3s ease}@keyframes pop{50%{transform:scale(1.05)}}
+.shake{animation:shake .35s ease}@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.gfinal{font:800 4rem/1 var(--f-display);margin:6px 0}.gnew{font-weight:800;color:#E07A3F;font-size:1.2rem}
+.gmiss{list-style:none;padding:0;display:grid;gap:8px;text-align:start}.gmiss li{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--paper);border:1px solid var(--line)}
+.gmiss img{width:30px;height:30px;background:#fff;border-radius:8px;padding:3px}.gmiss .key{font:700 1.1rem var(--f-mono);color:var(--accent);min-width:3ch}.gmiss small{display:block;color:var(--muted)}
+.acctbox .sep{border:0;border-top:1px solid var(--line);width:100%;margin:6px 0}.acctbox .h3{font-size:1.05rem;margin:0}
+.acctbox .links{display:flex;flex-wrap:wrap;gap:8px}.setrow{display:flex;flex-wrap:wrap;gap:14px;align-items:center}.sw{display:inline-flex;gap:8px;align-items:center;font-weight:600}
+.tm input{font:inherit;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.about dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px}.about dt{color:var(--muted)}.about dd{margin:0}
+@media (prefers-reduced-motion:reduce){.pop,.shake,.gopt.good,.gcombo.on,.gtime.hurry strong{animation:none}}
+
 @media (prefers-reduced-motion:reduce){.welcome,.welcome.out,.spin{animation:none}}
 .sccard{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:18px;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid color-mix(in srgb,var(--m2) 30%,var(--line));box-shadow:0 14px 34px -24px color-mix(in srgb,var(--m2) 80%,transparent)}
 .sccard .kb{flex:none;display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--m2),var(--m1));color:#fff;font:700 .95rem/1 var(--f-mono);direction:ltr}
@@ -6315,6 +6370,392 @@ async function savePdfNative(blob,filename){
  const w=await plug("Filesystem").writeFile({path:filename,data:b64,directory:"CACHE"});
  await plug("Share").share({title:filename,url:w.uri,dialogTitle:U("pdf")});
 }
+
+/* ======================= FEATURES (Nov 2026) =======================
+   Progress panel, streaks and badges · final test + certificate of completion ·
+   shortcut sprint game · daily reminder · feedback + about · privacy-friendly statistics.
+   Injected by build.py before the router. Wraps home(), account(), saveScore() and route(). */
+Object.assign(UI.sv,{
+ pct:"{p} % klart",lessonsOf:"{d} av 30 lektioner",streakN:"🔥 {n} dagar i rad",streak1:"🔥 1 dag i rad",streak0:"🔥 Börja idag",badgesN:"🏅 {n}/{t} märken",
+ badges:"Dina märken",badgesSub:"Samla märken genom att lära dig, öva och komma tillbaka.",newBadge:"🏅 Nytt märke: {b}",locked2:"Inte upplåst än",
+ bFirst:"Första lektionen",bFive:"5 lektioner",bHalf:"Halvvägs – 15 lektioner",bAll:"Alla 30 lektioner",bMod:"Modul {m} klar",bS3:"3 dagar i rad",bS7:"7 dagar i rad",bG100:"100 poäng i sprinten",bG300:"300 poäng i sprinten",bCert:"Kursintyg",
+ finalT:"Slutprov och kursintyg",finalLocked:"Klara alla 30 lektioner för att låsa upp slutprovet. Du har {d} av 30.",finalReady:"Du har klarat alla lektioner! Gör slutprovet – 20 frågor från hela kursen.",finalHave:"Du har klarat slutprovet. Hämta ditt kursintyg.",finalStart:"Starta slutprovet",certGet:"Visa mitt kursintyg",
+ fq:"Fråga {i} av {n}",fNext:"Nästa",fDone:"Visa resultat",fPass:"Grattis! Du klarade slutprovet med {p} %.",fFail:"Du fick {p} %. Du behöver minst 80 %. Repetera och försök igen!",fRetry:"Försök igen",
+ certTitle:"Kursintyg",certLine1:"Härmed intygas att",certLine2:"har genomfört kursen CADstart",certCourse:"AutoCAD 2D och 3D – 30 lektioner",certLine3:"och klarat slutprovet med {p} %.",certDate:"Datum",certId:"Intygsnummer",
+ certName:"Ditt namn på intyget",certNamePh:"För- och efternamn",certPdf:"Ladda ner PDF",certShare:"Dela bild",certMade:"Kursintyget är klart!",
+ certNote:"Detta är ett kursintyg från Nordicpro Apps som visar att kursen CADstart har genomförts. Det är inte en officiell examen eller certifiering. CADstart har ingen koppling till Autodesk.",
+ gT:"Kortkommando-sprint",gSub:"Hur många AutoCAD-kommandon hinner du på 60 sekunder?",gBest:"Rekord: {s}",gEasy:"Snabbval",gEasySub:"Välj rätt svar av fyra",gPro:"Proffs",gProSub:"Skriv kortkommandot själv",gGo:"Starta",
+ gWhich:"Vilket kortkommando?",gWhat:"Vad gör kommandot?",gType:"Skriv kortkommandot…",gOk:"OK",gSkip:"Hoppa över",gTime:"Tid",gScore:"Poäng",gCombo:"Combo ×{x}",
+ gOver:"Tiden är slut!",gNew:"🎉 Nytt rekord!",gRes:"{c} rätt av {n} · {a} % träffsäkerhet",gMiss:"Öva på de här",gAgain:"Spela igen",gMode:"Byt läge",gSound:"Ljud",gCard:"Träna kortkommandon som ett spel",
+ remT:"Daglig påminnelse",remSub:"Få en påminnelse varje dag att lära dig lite AutoCAD.",remOn:"Påminn mig varje dag",remTime:"Tid",remAsk:"🔔 Vill du få en daglig påminnelse kl. 19:00 att fortsätta lära dig?",remYes:"Ja, gärna",remNo:"Nej tack",remSet:"Påminnelsen är på kl. {t}",remOff:"Påminnelsen är avstängd",remDenied:"Tillåt aviseringar för CADstart i telefonens inställningar.",
+ remMsgs:["Dags för dagens AutoCAD-lektion! 📐","Fem minuter idag gör dig bättre i AutoCAD. ✏️","Håll din svit vid liv 🔥 – öppna CADstart.","Testa kortkommando-sprinten och slå ditt rekord! ⌨️"],
+ helpT:"Hjälp och feedback",fb:"✉️ Skicka feedback",bug:"🐞 Rapportera ett problem",about:"ℹ️ Om CADstart",fbSubj:"Feedback om CADstart",bugSubj:"Problem i CADstart",bugBody:"Beskriv vad som hände:\n\n\n—\nVersion: {v}\nSpråk: {l}\nEnhet: {d}",
+ aboutT:"Om CADstart",aboutTxt:"CADstart lär dig AutoCAD 2D och 3D steg för steg, på svenska, engelska och arabiska.",aboutBy:"Utvecklad av Nordicpro Apps, Sverige.",version:"Version",contact:"Kontakt",website:"Webbplats",
+ statT:"Anonym statistik",statSub:"Hjälp oss förbättra CADstart genom att dela anonym statistik om hur appen används (till exempel vilka lektioner som öppnas). Inga namn och inget annons-ID. Du kan ändra detta när som helst.",statOn:"Dela anonym statistik",statAsk:"📊 Vill du hjälpa oss förbättra CADstart med anonym användningsstatistik?",statYes:"Ja, gärna",statNo:"Nej tack"
+});
+Object.assign(UI.en,{
+ pct:"{p}% complete",lessonsOf:"{d} of 30 lessons",streakN:"🔥 {n}-day streak",streak1:"🔥 1-day streak",streak0:"🔥 Start today",badgesN:"🏅 {n}/{t} badges",
+ badges:"Your badges",badgesSub:"Collect badges by learning, practising and coming back.",newBadge:"🏅 New badge: {b}",locked2:"Not unlocked yet",
+ bFirst:"First lesson",bFive:"5 lessons",bHalf:"Halfway – 15 lessons",bAll:"All 30 lessons",bMod:"Module {m} complete",bS3:"3-day streak",bS7:"7-day streak",bG100:"100 points in the sprint",bG300:"300 points in the sprint",bCert:"Certificate",
+ finalT:"Final test and certificate",finalLocked:"Complete all 30 lessons to unlock the final test. You have {d} of 30.",finalReady:"You have completed every lesson! Take the final test – 20 questions from the whole course.",finalHave:"You passed the final test. Get your certificate of completion.",finalStart:"Start the final test",certGet:"Show my certificate",
+ fq:"Question {i} of {n}",fNext:"Next",fDone:"Show result",fPass:"Congratulations! You passed the final test with {p}%.",fFail:"You scored {p}%. You need at least 80%. Review and try again!",fRetry:"Try again",
+ certTitle:"Certificate of Completion",certLine1:"This is to certify that",certLine2:"has completed the CADstart course",certCourse:"AutoCAD 2D & 3D – 30 lessons",certLine3:"and passed the final test with {p}%.",certDate:"Date",certId:"Certificate no.",
+ certName:"Your name on the certificate",certNamePh:"First and last name",certPdf:"Download PDF",certShare:"Share image",certMade:"Your certificate is ready!",
+ certNote:"This certificate of completion from Nordicpro Apps shows that the CADstart course was completed. It is not an official qualification or certification. CADstart is not affiliated with Autodesk.",
+ gT:"Shortcut Sprint",gSub:"How many AutoCAD commands can you get in 60 seconds?",gBest:"Best: {s}",gEasy:"Quick pick",gEasySub:"Choose the right answer from four",gPro:"Pro",gProSub:"Type the shortcut yourself",gGo:"Start",
+ gWhich:"Which shortcut?",gWhat:"What does this command do?",gType:"Type the shortcut…",gOk:"OK",gSkip:"Skip",gTime:"Time",gScore:"Score",gCombo:"Combo ×{x}",
+ gOver:"Time's up!",gNew:"🎉 New record!",gRes:"{c} right out of {n} · {a}% accuracy",gMiss:"Practise these",gAgain:"Play again",gMode:"Change mode",gSound:"Sound",gCard:"Practise shortcuts as a game",
+ remT:"Daily reminder",remSub:"Get a reminder every day to learn a little AutoCAD.",remOn:"Remind me every day",remTime:"Time",remAsk:"🔔 Would you like a daily reminder at 19:00 to keep learning?",remYes:"Yes, please",remNo:"No thanks",remSet:"Reminder is on at {t}",remOff:"Reminder is off",remDenied:"Allow notifications for CADstart in your phone settings.",
+ remMsgs:["Time for today's AutoCAD lesson! 📐","Five minutes today makes you better at AutoCAD. ✏️","Keep your streak alive 🔥 – open CADstart.","Try the Shortcut Sprint and beat your record! ⌨️"],
+ helpT:"Help and feedback",fb:"✉️ Send feedback",bug:"🐞 Report a problem",about:"ℹ️ About CADstart",fbSubj:"CADstart feedback",bugSubj:"Problem in CADstart",bugBody:"Describe what happened:\n\n\n—\nVersion: {v}\nLanguage: {l}\nDevice: {d}",
+ aboutT:"About CADstart",aboutTxt:"CADstart teaches you AutoCAD 2D and 3D step by step, in English, Swedish and Arabic.",aboutBy:"Made by Nordicpro Apps, Sweden.",version:"Version",contact:"Contact",website:"Website",
+ statT:"Anonymous statistics",statSub:"Help us improve CADstart by sharing anonymous statistics about how the app is used (for example which lessons are opened). No names and no advertising ID. You can change this at any time.",statOn:"Share anonymous statistics",statAsk:"📊 Would you like to help us improve CADstart with anonymous usage statistics?",statYes:"Yes, sure",statNo:"No thanks"
+});
+Object.assign(UI.ar,{
+ pct:"اكتمل {p}%",lessonsOf:"{d} من 30 درسًا",streakN:"🔥 {n} أيام متتالية",streak1:"🔥 يوم واحد",streak0:"🔥 ابدأ اليوم",badgesN:"🏅 {n}/{t} أوسمة",
+ badges:"أوسمتك",badgesSub:"اجمع الأوسمة بالتعلّم والتدريب والعودة كل يوم.",newBadge:"🏅 وسام جديد: {b}",locked2:"لم يُفتح بعد",
+ bFirst:"الدرس الأول",bFive:"5 دروس",bHalf:"نصف الطريق – 15 درسًا",bAll:"كل الدروس الثلاثين",bMod:"أكملت الوحدة {m}",bS3:"3 أيام متتالية",bS7:"7 أيام متتالية",bG100:"100 نقطة في السباق",bG300:"300 نقطة في السباق",bCert:"شهادة الإتمام",
+ finalT:"الاختبار النهائي وشهادة الإتمام",finalLocked:"أكمل الدروس الثلاثين لفتح الاختبار النهائي. أنهيت {d} من 30.",finalReady:"أكملت كل الدروس! خذ الاختبار النهائي – 20 سؤالًا من الدورة كلها.",finalHave:"نجحت في الاختبار النهائي. احصل على شهادة الإتمام.",finalStart:"ابدأ الاختبار النهائي",certGet:"اعرض شهادتي",
+ fq:"السؤال {i} من {n}",fNext:"التالي",fDone:"اعرض النتيجة",fPass:"مبروك! نجحت في الاختبار النهائي بنتيجة {p}%.",fFail:"نتيجتك {p}%. تحتاج 80% على الأقل. راجع الدروس وحاول مرة أخرى!",fRetry:"حاول مرة أخرى",
+ certTitle:"شهادة إتمام دورة",certLine1:"نشهد بأن",certLine2:"قد أكمل دورة CADstart",certCourse:"أوتوكاد ثنائي وثلاثي الأبعاد – 30 درسًا",certLine3:"ونجح في الاختبار النهائي بنتيجة {p}%.",certDate:"التاريخ",certId:"رقم الشهادة",
+ certName:"اسمك على الشهادة",certNamePh:"الاسم الكامل",certPdf:"تنزيل PDF",certShare:"مشاركة الصورة",certMade:"شهادتك جاهزة!",
+ certNote:"هذه شهادة إتمام من Nordicpro Apps تثبت إكمال دورة CADstart، وليست شهادة رسمية أو معتمدة. CADstart غير تابع لشركة Autodesk.",
+ gT:"سباق الاختصارات",gSub:"كم أمرًا من أوامر أوتوكاد تستطيع أن تعرف في 60 ثانية؟",gBest:"الرقم القياسي: {s}",gEasy:"اختيار سريع",gEasySub:"اختر الجواب الصحيح من أربعة",gPro:"محترف",gProSub:"اكتب الاختصار بنفسك",gGo:"ابدأ",
+ gWhich:"ما هو الاختصار؟",gWhat:"ماذا يفعل هذا الأمر؟",gType:"اكتب الاختصار…",gOk:"تم",gSkip:"تخطَّ",gTime:"الوقت",gScore:"النقاط",gCombo:"سلسلة ×{x}",
+ gOver:"انتهى الوقت!",gNew:"🎉 رقم قياسي جديد!",gRes:"{c} صحيح من {n} · دقة {a}%",gMiss:"تدرّب على هذه",gAgain:"العب مرة أخرى",gMode:"غيّر النمط",gSound:"الصوت",gCard:"تدرّب على الاختصارات كلعبة",
+ remT:"تذكير يومي",remSub:"احصل على تذكير كل يوم لتتعلّم قليلًا من أوتوكاد.",remOn:"ذكّرني كل يوم",remTime:"الوقت",remAsk:"🔔 هل تريد تذكيرًا يوميًا الساعة 19:00 لتتابع التعلّم؟",remYes:"نعم، من فضلك",remNo:"لا، شكرًا",remSet:"التذكير مفعّل الساعة {t}",remOff:"التذكير متوقف",remDenied:"اسمح بإشعارات CADstart من إعدادات الهاتف.",
+ remMsgs:["حان وقت درس أوتوكاد اليوم! 📐","خمس دقائق اليوم تجعلك أفضل في أوتوكاد. ✏️","حافظ على سلسلتك 🔥 – افتح CADstart.","جرّب سباق الاختصارات واكسر رقمك القياسي! ⌨️"],
+ helpT:"المساعدة والملاحظات",fb:"✉️ أرسل ملاحظة",bug:"🐞 أبلغ عن مشكلة",about:"ℹ️ حول CADstart",fbSubj:"ملاحظة حول CADstart",bugSubj:"مشكلة في CADstart",bugBody:"صف ما حدث:\n\n\n—\nالنسخة: {v}\nاللغة: {l}\nالجهاز: {d}",
+ aboutT:"حول CADstart",aboutTxt:"يعلّمك CADstart أوتوكاد ثنائي وثلاثي الأبعاد خطوة بخطوة، بالعربية والإنجليزية والسويدية.",aboutBy:"من تطوير Nordicpro Apps، السويد.",version:"النسخة",contact:"التواصل",website:"الموقع",
+ statT:"إحصائيات مجهولة",statSub:"ساعدنا على تحسين CADstart بمشاركة إحصائيات مجهولة الهوية عن استخدام التطبيق (مثل الدروس التي تُفتح). بدون أسماء وبدون معرّف إعلانات. يمكنك تغيير ذلك في أي وقت.",statOn:"شارك إحصائيات مجهولة",statAsk:"📊 هل تريد مساعدتنا على تحسين CADstart بإحصائيات استخدام مجهولة؟",statYes:"نعم",statNo:"لا، شكرًا"
+});
+
+const CONTACT="nordicproapps@hotmail.com";
+const LS={get(k,d){let v=null;try{v=localStorage.getItem(k);}catch(e){return d}if(v==null)return d;try{return JSON.parse(v)}catch(e){return v}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const ymd=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+let APP_VERSION=NATIVE?"":"web";
+const doneCount=(sc=loadScores())=>L.filter(l=>passed(l.n,sc)||skippedQ(l.n)).length;
+const fmtDate=d=>{try{return new Intl.DateTimeFormat(lang==="ar"?"ar":lang==="sv"?"sv-SE":"en-GB",{year:"numeric",month:"long",day:"numeric"}).format(d)}catch(e){return ymd(d)}};
+
+/* ---------- streak + badges ---------- */
+function markActive(){const days=LS.get("cad.days",[]);const t=ymd(new Date());if(days[days.length-1]!==t){days.push(t);LS.set("cad.days",days.slice(-120));}}
+function streak(){const s=new Set(LS.get("cad.days",[]));const d=new Date();if(!s.has(ymd(d))){d.setDate(d.getDate()-1);if(!s.has(ymd(d)))return 0;}let n=0;while(s.has(ymd(d))){n++;d.setDate(d.getDate()-1);}return n;}
+function badgeDefs(){
+ const sc=loadScores(),d=doneCount(sc),st=Math.max(streak(),LS.get("cad.bestStreak",0)),best=LS.get("cad.gameBest",0),fin=LS.get("cad.final",null);
+ const list=[["first","🎯",U("bFirst"),d>=1],["five","⭐",U("bFive"),d>=5],["half","🚀",U("bHalf"),d>=15],["all","🏁",U("bAll"),d>=30]];
+ MODULES.forEach(m=>list.push(["mod"+m.id,"🧩",fill(U("bMod"),{m:m.id})+" · "+m[lang],L.filter(l=>l.n>=m.from&&l.n<=m.to).every(l=>passed(l.n,sc)||skippedQ(l.n))]));
+ list.push(["s3","🔥",U("bS3"),st>=3],["s7","☄️",U("bS7"),st>=7],["g100","⌨️",U("bG100"),best>=100],["g300","⚡",U("bG300"),best>=300],["cert","🎓",U("bCert"),!!(fin&&fin.pass)]);
+ return list;
+}
+function badgeCheck(quiet){
+ const s=streak();if(s>LS.get("cad.bestStreak",0))LS.set("cad.bestStreak",s);
+ if(LS.get("cad.badges",null)===null)quiet=true;
+ const have=new Set(LS.get("cad.badges",[]));const fresh=badgeDefs().filter(b=>b[3]&&!have.has(b[0]));
+ if(!fresh.length)return;fresh.forEach(b=>have.add(b[0]));LS.set("cad.badges",[...have]);
+ if(!quiet){toast(fill(U("newBadge"),{b:fresh[0][1]+" "+fresh[0][2]}));track("badge",{id:fresh[0][0]});}
+}
+function ring(p){const r=34,c=2*Math.PI*r;return `<svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="${r}" class="rbg"/><circle cx="40" cy="40" r="${r}" class="rfg" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p)}"/><text x="40" y="45" text-anchor="middle">${Math.round(p*100)}%</text></svg>`;}
+function badgesView(){
+ app.className="";const defs=badgeDefs();
+ app.innerHTML=`<div class="crumbs"><a href="#">${U("all")}</a><span class="muted">/</span><span class="muted">${U("badges")}</span></div>
+ <article class="sheet"><header class="lhead"><span class="eyebrow">CADstart</span><h1>${U("badges")}</h1><p class="muted">${U("badgesSub")}</p></header>
+ <div class="bgrid">${defs.map(b=>`<div class="badge${b[3]?" on":""}"><span class="bi">${b[3]?b[1]:"🔒"}</span><strong>${esc(b[2])}</strong>${b[3]?"":`<small>${U("locked2")}</small>`}</div>`).join("")}</div></article>`;
+}
+
+/* ---------- final test ---------- */
+let FINAL=null;
+function finalCard(){
+ const d=doneCount(),fin=LS.get("cad.final",null),ok=d>=30||teacher;
+ const txt=fin&&fin.pass?U("finalHave"):ok?U("finalReady"):fill(U("finalLocked"),{d});
+ const btn=fin&&fin.pass?`<a class="btn" href="#certificate">🎓 ${U("certGet")}</a>`:ok?`<a class="btn" href="#final">${U("finalStart")}</a>`:"";
+ return `<section class="fcard${ok?" ready":""}"><span class="fi">🎓</span><div><strong>${U("finalT")}</strong><p>${txt}</p>${btn}</div></section>`;
+}
+function finalStart(){
+ const pool=[];L.forEach(l=>(l.quiz||[]).forEach(q=>pool.push(q)));
+ for(let i=pool.length-1;i>0;i--){const k=Math.floor(Math.random()*(i+1));[pool[i],pool[k]]=[pool[k],pool[i]];}
+ FINAL={qs:pool.slice(0,20).map(q=>{const o=T(q.o).map((t,i)=>({t,ok:i===q.a}));for(let i=o.length-1;i>0;i--){const k=Math.floor(Math.random()*(i+1));[o[i],o[k]]=[o[k],o[i]];}return{q:T(q.q),o};}),i:0,right:0,answered:false};
+ finalView();
+}
+function finalView(){
+ app.className="";
+ const crumbs=`<div class="crumbs"><a href="#">${U("all")}</a><span class="muted">/</span><span class="muted">${U("finalT")}</span></div>`;
+ if(doneCount()<30&&!teacher){app.innerHTML=crumbs+`<article class="sheet">${finalCard()}</article>`;return;}
+ if(!FINAL){finalStart();return;}
+ const F=FINAL,n=F.qs.length;
+ if(F.i>=n){
+  const p=Math.round(F.right/n*100),pass=p>=80;
+  if(pass){const prev=LS.get("cad.final",null);if(!prev||!prev.pass||p>prev.score)LS.set("cad.final",{pass:true,score:p,date:ymd(new Date()),id:(prev&&prev.id)||certId()});}
+  track("final_test",{score:p,passed:pass?1:0});badgeCheck();
+  app.innerHTML=crumbs+`<article class="sheet fres"><div class="big">${pass?"🎓":"📚"}</div><h1>${fill(U(pass?"fPass":"fFail"),{p})}</h1><div class="actions">${pass?`<a class="btn" href="#certificate">${U("certGet")}</a>`:`<button class="btn" id="f-retry" type="button">${U("fRetry")}</button><a class="btn ghost" href="#">${U("all")}</a>`}</div></article>`;
+  if(pass)confetti();
+  const r=document.getElementById("f-retry");if(r)r.onclick=()=>{FINAL=null;finalView();};
+  FINAL=null;return;
+ }
+ const q=F.qs[F.i];
+ app.innerHTML=crumbs+`<article class="sheet fq"><span class="eyebrow">${fill(U("fq"),{i:F.i+1,n})}</span><div class="fbar"><i style="width:${F.i/n*100}%"></i></div><h2>${esc(q.q)}</h2>
+ <div class="fopts">${q.o.map((o,i)=>`<button type="button" class="fopt" data-i="${i}">${esc(o.t)}</button>`).join("")}</div>
+ <div class="actions"><button class="btn" id="f-next" type="button" hidden>${F.i+1<n?U("fNext"):U("fDone")} ${arrow("next")}</button></div></article>`;
+ const next=document.getElementById("f-next");
+ app.querySelectorAll(".fopt").forEach(b=>b.onclick=()=>{
+  if(F.answered)return;F.answered=true;const o=q.o[+b.dataset.i];if(o.ok)F.right++;
+  app.querySelectorAll(".fopt").forEach((x,i)=>{x.disabled=true;if(q.o[i].ok)x.classList.add("good");});if(!o.ok)b.classList.add("bad");
+  next.hidden=false;next.focus();});
+ next.onclick=()=>{F.i++;F.answered=false;finalView();window.scrollTo(0,0);};
+}
+function certId(){const a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let s="CS-";for(let i=0;i<8;i++){s+=a[Math.floor(Math.random()*a.length)];if(i===3)s+="-";}return s;}
+
+/* ---------- certificate ---------- */
+function drawCert(cv,name){
+ const fin=LS.get("cad.final",{score:0,date:ymd(new Date()),id:"—"});
+ const W=2000,H=1414;cv.width=W;cv.height=H;const x=cv.getContext("2d");const rtl=lang==="ar";
+ const FONT='"IBM Plex Sans Arabic","Noto Sans Arabic","Segoe UI",Roboto,system-ui,sans-serif';
+ x.fillStyle="#fbfcfd";x.fillRect(0,0,W,H);
+ const g=x.createLinearGradient(0,0,W,0);g.addColorStop(0,"#2C5A80");g.addColorStop(.55,"#56408F");g.addColorStop(1,"#8A3557");
+ x.fillStyle=g;x.fillRect(0,0,W,26);x.fillRect(0,H-26,W,26);
+ x.strokeStyle="#2C5A80";x.lineWidth=6;x.strokeRect(70,70,W-140,H-140);x.strokeStyle="#c9a24a";x.lineWidth=2;x.strokeRect(92,92,W-184,H-184);
+ // logo cube
+ x.save();x.translate(W/2,250);x.fillStyle="#2C5A80";x.beginPath();x.moveTo(0,-70);x.lineTo(62,-35);x.lineTo(62,35);x.lineTo(0,70);x.lineTo(-62,35);x.lineTo(-62,-35);x.closePath();x.fill();
+ x.fillStyle="#fff";x.globalAlpha=.9;x.beginPath();x.moveTo(0,-48);x.lineTo(42,-24);x.lineTo(0,0);x.lineTo(-42,-24);x.closePath();x.fill();x.globalAlpha=.55;x.beginPath();x.moveTo(-42,-14);x.lineTo(-4,8);x.lineTo(-4,52);x.lineTo(-42,30);x.closePath();x.fill();x.globalAlpha=.75;x.beginPath();x.moveTo(42,-14);x.lineTo(4,8);x.lineTo(4,52);x.lineTo(42,30);x.closePath();x.fill();x.restore();
+ x.textAlign="center";x.direction=rtl?"rtl":"ltr";x.fillStyle="#1d2730";
+ const t=(s,y,size,w="400",color="#1d2730",max=W-300)=>{x.font=`${w} ${size}px ${FONT}`;x.fillStyle=color;let sz=size;while(x.measureText(s).width>max&&sz>20){sz-=2;x.font=`${w} ${sz}px ${FONT}`;}x.fillText(s,W/2,y);};
+ t("CADSTART",370,34,"600","#56408F");
+ t(U("certTitle"),470,92,"700","#2C5A80");
+ if(lang!=="en")t("Certificate of Completion",530,34,"400","#5b6872");
+ t(U("certLine1"),640,40,"400","#5b6872");
+ t(name||"—",760,96,"700","#1d2730",W-360);
+ x.strokeStyle="#c9a24a";x.lineWidth=3;x.beginPath();x.moveTo(W/2-520,800);x.lineTo(W/2+520,800);x.stroke();
+ t(U("certLine2"),880,44,"400");
+ t(U("certCourse"),950,50,"700","#2C5A80");
+ t(fill(U("certLine3"),{p:fin.score}),1020,44,"400");
+ const dt=fin.date?new Date(fin.date+"T12:00:00"):new Date();
+ x.font=`400 32px ${FONT}`;x.fillStyle="#5b6872";
+ x.textAlign=rtl?"right":"left";x.fillText(`${U("certDate")}: ${fmtDate(dt)}`,rtl?W-170:170,1150);
+ x.textAlign=rtl?"left":"right";x.fillText(`${U("certId")}: ${fin.id||"—"}`,rtl?170:W-170,1150);
+ x.textAlign="center";x.font=`600 34px ${FONT}`;x.fillStyle="#1d2730";x.fillText("Nordicpro Apps · nordicproapps.github.io",W/2,1150);
+ // disclaimer, wrapped
+ x.font=`400 24px ${FONT}`;x.fillStyle="#7a868d";const words=U("certNote").split(" ");let line="",y=1225;
+ for(const w of words){const test=line?line+" "+w:w;if(x.measureText(test).width>W-420){x.fillText(line,W/2,y);y+=34;line=w;}else line=test;}if(line)x.fillText(line,W/2,y);
+}
+function certView(){
+ app.className="";const fin=LS.get("cad.final",null);
+ const crumbs=`<div class="crumbs"><a href="#">${U("all")}</a><span class="muted">/</span><span class="muted">${U("certTitle")}</span></div>`;
+ if(!(fin&&fin.pass)){app.innerHTML=crumbs+`<article class="sheet">${finalCard()}</article>`;return;}
+ const nm=LS.get("cad.certname","")||(USER&&USER.displayName)||"";
+ app.innerHTML=crumbs+`<article class="sheet"><header class="lhead"><span class="eyebrow">🎓 CADstart</span><h1>${U("certTitle")}</h1></header>
+ <label class="cname"><span>${U("certName")}</span><input id="c-name" type="text" maxlength="48" autocomplete="name" placeholder="${esc(U("certNamePh"))}" value="${esc(nm)}"></label>
+ <canvas id="c-cv" class="certcv" aria-label="${esc(U("certTitle"))}"></canvas>
+ <div class="actions"><button class="btn" id="c-pdf" type="button">⬇ ${U("certPdf")}</button><button class="btn ghost" id="c-img" type="button">${U("certShare")}</button></div>
+ <p class="muted small">${U("certNote")}</p></article>`;
+ const cv=document.getElementById("c-cv"),inp=document.getElementById("c-name");
+ const redraw=()=>drawCert(cv,inp.value.trim());
+ const fontsReady=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();fontsReady.then(redraw);redraw();
+ inp.oninput=()=>{LS.set("cad.certname",inp.value.trim());redraw();};
+ document.getElementById("c-pdf").onclick=async e=>{const b=e.currentTarget;b.disabled=true;try{redraw();
+  const {jsPDF}=window.jspdf;const d=new jsPDF({orientation:"landscape",unit:"mm",format:"a4"});d.addImage(cv.toDataURL("image/jpeg",.93),"JPEG",0,0,297,210);
+  await deliverFile(d.output("blob"),"CADstart-certificate.pdf");track("certificate",{type:"pdf"});badgeCheck();}catch(err){console.warn(err);toast(U("pdfNo"));}finally{b.disabled=false;}};
+ document.getElementById("c-img").onclick=async e=>{const b=e.currentTarget;b.disabled=true;try{redraw();const blob=await new Promise(r=>cv.toBlob(r,"image/png"));
+  if(!NATIVE&&navigator.canShare&&navigator.canShare({files:[new File([blob],"CADstart-certificate.png",{type:"image/png"})]})){await navigator.share({files:[new File([blob],"CADstart-certificate.png",{type:"image/png"})],title:"CADstart"});}
+  else await deliverFile(blob,"CADstart-certificate.png");track("certificate",{type:"image"});}catch(err){console.warn(err);}finally{b.disabled=false;}};
+}
+async function deliverFile(blob,fname){
+ if(NATIVE){await savePdfNative(blob,fname);toast(U("certMade"));return;}
+ const dl=window.claude?await window.claude.use("downloads"):null;
+ if(dl){await dl.save({filename:fname,data:blob});toast(U("certMade"));return;}
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=fname;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);toast(U("certMade"));
+}
+
+/* ---------- confetti ---------- */
+function confetti(){
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+ const c=document.createElement("canvas");c.className="confetti";document.body.appendChild(c);const x=c.getContext("2d");
+ const W=c.width=innerWidth,H=c.height=innerHeight;const cols=["#8FBCE0","#6ACDBF","#B7A0EE","#EDB571","#EE98B3","#8ACF9C","#ffd166"];
+ const ps=Array.from({length:140},()=>({x:W/2+(Math.random()-.5)*W*.3,y:H*.35,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,r:4+Math.random()*5,c:cols[Math.floor(Math.random()*cols.length)],a:Math.random()*6}));
+ const t0=performance.now();(function f(t){x.clearRect(0,0,W,H);for(const p of ps){p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r,-p.r/2,p.r*2,p.r);x.restore();}
+  if(t-t0<2600)requestAnimationFrame(f);else c.remove();})(t0);
+}
+
+/* ---------- Shortcut Sprint ---------- */
+const GAME_SECS=60;let GAME=null;
+const sndOn=()=>LS.get("cad.sound",true);
+let AC=null;function beep(f,d=.09,type="sine",v=.08){if(!sndOn())return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(AC.destination);const t=AC.currentTime;g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.start(t);o.stop(t+d);}catch(e){}}
+const buzz=p=>{try{navigator.vibrate&&navigator.vibrate(p)}catch(e){}};
+function gamePool(){
+ const seen=new Set(),all=[];
+ SC_GROUPS.forEach((g,gi)=>g.rows.forEach(r=>{const a=String(r[0]||"").toUpperCase();if(!a||a.length>4||/[^A-Z0-9]/.test(a)||seen.has(a))return;seen.add(a);all.push({a,cmd:r[1],d:scDesc(r),gi,ic:scIcon(r[0])});}));
+ return all;
+}
+function gameHome(){
+ app.className="";GAME=null;const best=LS.get("cad.gameBest",0);
+ app.innerHTML=`<div class="crumbs"><a href="#">${U("all")}</a><span class="muted">/</span><span class="muted">${U("gT")}</span></div>
+ <article class="sheet game"><header class="ghead"><span class="gbig">⌨️</span><h1>${U("gT")}</h1><p class="muted">${U("gSub")}</p>${best?`<p class="gbest">🏆 ${fill(U("gBest"),{s:best})}</p>`:""}</header>
+ <div class="gmodes"><button type="button" class="gmode" data-m="easy"><span>⚡</span><strong>${U("gEasy")}</strong><small>${U("gEasySub")}</small></button>
+ <button type="button" class="gmode" data-m="pro"><span>⌨️</span><strong>${U("gPro")}</strong><small>${U("gProSub")}</small></button></div>
+ <label class="gsnd"><input type="checkbox" id="g-snd" ${sndOn()?"checked":""}> 🔊 ${U("gSound")}</label></article>`;
+ document.getElementById("g-snd").onchange=e=>LS.set("cad.sound",e.target.checked);
+ app.querySelectorAll(".gmode").forEach(b=>b.onclick=()=>gameStart(b.dataset.m));
+}
+function gameStart(mode){
+ const pool=gamePool();
+ GAME={mode,pool,score:0,combo:0,right:0,n:0,miss:[],end:Date.now()+GAME_SECS*1000,timer:0,lock:false,recent:[]};
+ markActive();gameNext();
+ GAME.timer=setInterval(()=>{if(!GAME)return;const left=Math.max(0,GAME.end-Date.now());const el=document.getElementById("g-t");const bar=document.getElementById("g-bar");
+  if(el)el.textContent=Math.ceil(left/1000);if(bar)bar.style.width=(left/(GAME_SECS*1000)*100)+"%";if(left<=10000&&el)el.parentElement.classList.add("hurry");if(left<=0)gameOver();},200);
+ track("game_start",{mode});
+}
+function pickQ(){
+ const G=GAME;const easy=G.right<6;const src=easy?G.pool.filter(p=>p.gi<4&&p.a.length<=2):G.pool;const list=src.length>8?src:G.pool;
+ let q;do{q=list[Math.floor(Math.random()*list.length)];}while(G.recent.includes(q.a)&&list.length>12);
+ G.recent=[...G.recent.slice(-10),q.a];return q;
+}
+function gameNext(){
+ if(!GAME)return;const G=GAME;const q=pickQ();G.q=q;G.lock=false;
+ const mult=G.combo>=6?3:G.combo>=3?2:1;
+ const rev=G.mode==="easy"&&Math.random()<.35;G.rev=rev;
+ let body;
+ const icon=q.ic?`<img class="gic" src="${q.ic}" alt="">`:`<span class="gic gk">⌨</span>`;
+ if(G.mode==="pro")body=`<div class="gq">${icon}<div><span class="eyebrow">${U("gWhich")}</span><strong class="gcmd">${esc(q.cmd)}</strong><small>${esc(q.d)}</small></div></div>
+  <form id="g-form" class="gtype" autocomplete="off"><input id="g-in" type="text" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="10" placeholder="${esc(U("gType"))}" aria-label="${esc(U("gType"))}"><button class="btn" type="submit">${U("gOk")}</button></form>
+  <button type="button" class="gskip" id="g-skip">${U("gSkip")} ${arrow("next")}</button>`;
+ else{
+  const opts=[q];const pool=G.pool.filter(p=>p.a!==q.a&&p.cmd!==q.cmd);while(opts.length<4){const o=pool[Math.floor(Math.random()*pool.length)];if(!opts.some(x=>x.a===o.a||x.cmd===o.cmd))opts.push(o);}
+  opts.sort(()=>Math.random()-.5);G.opts=opts;
+  body=rev?`<div class="gq rev"><span class="eyebrow">${U("gWhat")}</span><span class="galias">${esc(q.a)}</span></div><div class="gopts">${opts.map((o,i)=>`<button type="button" class="gopt wide" data-i="${i}">${o.ic?`<img src="${o.ic}" alt="">`:""}<span><strong>${esc(o.cmd)}</strong><small>${esc(o.d)}</small></span></button>`).join("")}</div>`
+   :`<div class="gq">${icon}<div><span class="eyebrow">${U("gWhich")}</span><strong class="gcmd">${esc(q.cmd)}</strong><small>${esc(q.d)}</small></div></div><div class="gopts grid">${opts.map((o,i)=>`<button type="button" class="gopt key" data-i="${i}">${esc(o.a)}</button>`).join("")}</div>`;
+ }
+ const left=Math.max(0,G.end-Date.now());
+ app.innerHTML=`<article class="sheet game play"><div class="ghud"><div class="gstat"><small>${U("gScore")}</small><strong id="g-s">${G.score}</strong></div>
+ <div class="gcombo${mult>1?" on":""}">${mult>1?"🔥 "+fill(U("gCombo"),{x:mult}):""}</div><div class="gstat gtime"><small>${U("gTime")}</small><strong id="g-t">${Math.ceil(left/1000)}</strong></div></div>
+ <div class="gtbar"><i id="g-bar" style="width:${left/(GAME_SECS*1000)*100}%"></i></div><div id="g-card" class="gcard">${body}</div><p class="gfx" id="g-fx" aria-live="polite"></p></article>`;
+ if(G.mode==="pro"){const inp=document.getElementById("g-in");inp.focus();document.getElementById("g-form").onsubmit=e=>{e.preventDefault();const v=inp.value.trim().toUpperCase();if(!v)return;gameAnswer(v===q.a||v===q.cmd.toUpperCase());};
+  document.getElementById("g-skip").onclick=()=>gameAnswer(false,true);}
+ else app.querySelectorAll(".gopt").forEach(b=>b.onclick=()=>{const o=G.opts[+b.dataset.i];const ok=o.a===q.a;if(!ok)b.classList.add("bad");app.querySelectorAll(".gopt").forEach((x,i)=>{if(G.opts[i].a===q.a)x.classList.add("good");});gameAnswer(ok);});
+}
+function gameAnswer(ok,skipped){
+ const G=GAME;if(!G||G.lock)return;G.lock=true;G.n++;
+ const fx=document.getElementById("g-fx"),card=document.getElementById("g-card");
+ if(ok){G.combo++;G.right++;const mult=G.combo>=6?3:G.combo>=3?2:1;const pts=10*mult;G.score+=pts;
+  if(G.combo%5===0){G.end+=3000;fx.textContent=`+${pts} · ⏱ +3s`;}else fx.textContent=`+${pts}`;
+  fx.className="gfx good";card.classList.add("pop");beep(520+Math.min(G.combo,12)*45,.1,"triangle");buzz(12);
+  document.getElementById("g-s").textContent=G.score;}
+ else{G.combo=0;G.miss.push(G.q);fx.className="gfx bad";fx.textContent=`${G.q.a} = ${G.q.cmd}`;card.classList.add("shake");if(!skipped){beep(150,.18,"sawtooth",.05);buzz([30,40,30]);}}
+ setTimeout(()=>{if(GAME===G&&Date.now()<G.end)gameNext();},ok?380:900);
+}
+function gameOver(){
+ const G=GAME;if(!G)return;clearInterval(G.timer);GAME=null;
+ const best=LS.get("cad.gameBest",0),rec=G.score>best;if(rec)LS.set("cad.gameBest",G.score);
+ const acc=G.n?Math.round(G.right/G.n*100):0;const plays=LS.get("cad.gamePlays",0)+1;LS.set("cad.gamePlays",plays);
+ const miss=[...new Map(G.miss.map(m=>[m.a,m])).values()].slice(0,8);
+ app.innerHTML=`<article class="sheet game over"><span class="gbig">${rec?"🏆":"⏱"}</span><h1>${U("gOver")}</h1>${rec&&G.score>0?`<p class="gnew">${U("gNew")}</p>`:""}
+ <p class="gfinal">${G.score}</p><p class="muted">${fill(U("gRes"),{c:G.right,n:G.n,a:acc})}</p><p class="gbest">🏆 ${fill(U("gBest"),{s:Math.max(best,G.score)})}</p>
+ ${miss.length?`<h2>${U("gMiss")}</h2><ul class="gmiss">${miss.map(m=>`<li>${m.ic?`<img src="${m.ic}" alt="">`:""}<span class="key">${esc(m.a)}</span><span><strong>${esc(m.cmd)}</strong><small>${esc(m.d)}</small></span></li>`).join("")}</ul>`:""}
+ <div class="actions"><button class="btn" id="g-again" type="button">↻ ${U("gAgain")}</button><button class="btn ghost" id="g-mode" type="button">${U("gMode")}</button><a class="btn ghost" href="#shortcuts">${U("scTitle")}</a></div></article>`;
+ if(rec&&G.score>0){confetti();beep(660,.12,"triangle");setTimeout(()=>beep(880,.18,"triangle"),130);}
+ document.getElementById("g-again").onclick=()=>gameStart(G.mode);document.getElementById("g-mode").onclick=gameHome;
+ track("game_end",{mode:G.mode,score:G.score});markActive();badgeCheck();
+ if(NATIVE&&plays%2===0)setTimeout(showInterstitialAd,1500);
+}
+
+/* ---------- daily reminder (Android) ---------- */
+const REM_ID=7001;
+const remCfg=()=>LS.get("cad.reminder",{on:false,t:"19:00",asked:false});
+async function remApply(cfg,ask){
+ if(!NATIVE)return false;const LN=plug("LocalNotifications");
+ try{await LN.cancel({notifications:[{id:REM_ID}]});}catch(e){}
+ if(!cfg.on)return true;
+ try{let p=await LN.checkPermissions();if(p.display!=="granted"&&ask)p=await LN.requestPermissions();if(p.display!=="granted"){toast(U("remDenied"));return false;}
+  const [h,m]=cfg.t.split(":").map(Number);const msgs=U("remMsgs");
+  await LN.schedule({notifications:[{id:REM_ID,title:"CADstart",body:msgs[Math.floor(Math.random()*msgs.length)],schedule:{on:{hour:h,minute:m},allowWhileIdle:true},smallIcon:"ic_stat_cadstart",iconColor:"#2D6AA6"}]});
+  return true;}catch(e){console.warn("reminder",e);return false;}
+}
+async function remSet(on,t,ask=true){const cfg={...remCfg(),on,t:t||remCfg().t,asked:true};const ok=await remApply(cfg,ask);if(on&&!ok)cfg.on=false;LS.set("cad.reminder",cfg);if(on&&ok){toast(fill(U("remSet"),{t:cfg.t}));track("reminder_on",{time:cfg.t});}return ok;}
+
+/* ---------- anonymous statistics (Firebase Analytics, Android only) ---------- */
+let STAT_EEA=LS.get("cad.eea",null);
+const statChoice=()=>LS.get("cad.stats",null);
+const statsOn=()=>NATIVE&&(statChoice()===true||(statChoice()===null&&STAT_EEA===false));
+async function statsApply(){
+ if(!NATIVE)return;const FA=plug("FirebaseAnalytics");const on=statsOn();
+ try{await FA.setConsent({type:"ANALYTICS_STORAGE",status:on?"GRANTED":"DENIED"});
+  for(const t of ["AD_STORAGE","AD_USER_DATA","AD_PERSONALIZATION"])await FA.setConsent({type:t,status:"DENIED"});
+  await FA.setEnabled({enabled:on});}catch(e){console.warn("analytics",e);}
+}
+function track(name,params){if(!statsOn())return;try{plug("FirebaseAnalytics").logEvent({name,params:params||{}}).catch(()=>{});}catch(e){}}
+function trackScreen(name){if(!statsOn())return;try{plug("FirebaseAnalytics").setCurrentScreen({screenName:name}).catch(()=>{});}catch(e){}}
+
+/* ---------- about ---------- */
+function mailto(subj,body){return `mailto:${CONTACT}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body||"")}`;}
+function deviceInfo(){const ua=navigator.userAgent||"";const m=ua.match(/Android [\d.]+(; [^;)]+)?/);return (m?m[0]:ua.slice(0,60)).replace(/; wv/,"");}
+function bugMail(){return mailto(U("bugSubj"),fill(U("bugBody"),{v:APP_VERSION||"?",l:lang,d:deviceInfo()}));}
+function aboutView(){
+ app.className="";
+ app.innerHTML=`<div class="crumbs"><a href="#">${U("all")}</a><span class="muted">/</span><span class="muted">${U("aboutT")}</span></div>
+ <article class="sheet about"><header class="lhead"><span class="eyebrow">CADstart</span><h1>${U("aboutT")}</h1></header>
+ <p>${U("aboutTxt")}</p><p>${U("aboutBy")}</p>
+ <dl><dt>${U("version")}</dt><dd>${esc(APP_VERSION||"—")}</dd><dt>${U("contact")}</dt><dd><a href="${mailto(U("fbSubj"))}">${CONTACT}</a></dd><dt>${U("website")}</dt><dd><a href="https://nordicproapps.github.io" target="_blank" rel="noopener">nordicproapps.github.io</a></dd></dl>
+ <p class="muted small">${esc(SHOT_CREDIT)}</p><p><a href="${PRIVACY_URL}">${U("privacy")}</a></p></article>`;
+}
+
+/* ---------- wraps: home, account, saveScore, route ---------- */
+const _home=home;
+home=function(){
+ _home();markActive();badgeCheck(true);
+ const sc=loadScores(),d=doneCount(sc),p=d/30,st=streak(),bd=badgeDefs(),bn=bd.filter(b=>b[3]).length;
+ const pr=app.querySelector(".hero .progress");
+ if(pr)pr.outerHTML=`<a class="prog2" href="#badges">${ring(p)}<span class="pinfo"><strong>${fill(U("pct"),{p:Math.round(p*100)})}</strong><small>${fill(U("lessonsOf"),{d})}</small><span class="pchips"><span>${st>1?fill(U("streakN"),{n:st}):st===1?U("streak1"):U("streak0")}</span><span>${fill(U("badgesN"),{n:bn,t:bd.length})}</span></span></span></a>`;
+ const sc1=app.querySelector(".sccard");
+ if(sc1){sc1.insertAdjacentHTML("beforebegin",`<a class="gamecard" href="#game"><span class="gicon">⌨️</span><span><strong>${U("gT")}</strong><small>${U("gCard")}${LS.get("cad.gameBest",0)?" · 🏆 "+LS.get("cad.gameBest",0):""}</small></span><span class="go">${arrow("next")}</span></a>`);}
+ const firstMod=app.querySelector("section.module");
+ if(firstMod)firstMod.insertAdjacentHTML("beforebegin",finalCard());
+ // gentle prompts (Android only), one at a time
+ const hero=app.querySelector(".hero");let prompt="";
+ if(NATIVE&&STAT_EEA===true&&statChoice()===null)prompt=`<div class="askcard" id="ask-stat"><p>${U("statAsk")}</p><div class="actions"><button class="btn" data-a="y" type="button">${U("statYes")}</button><button class="btn ghost" data-a="n" type="button">${U("statNo")}</button></div></div>`;
+ else if(NATIVE&&d>=1&&!remCfg().asked&&!remCfg().on)prompt=`<div class="askcard" id="ask-rem"><p>${U("remAsk")}</p><div class="actions"><button class="btn" data-a="y" type="button">${U("remYes")}</button><button class="btn ghost" data-a="n" type="button">${U("remNo")}</button></div></div>`;
+ if(prompt&&hero){hero.insertAdjacentHTML("afterend",prompt);
+  const as=document.getElementById("ask-stat");if(as)as.querySelectorAll("button").forEach(b=>b.onclick=async()=>{LS.set("cad.stats",b.dataset.a==="y");await statsApply();as.remove();});
+  const ar=document.getElementById("ask-rem");if(ar)ar.querySelectorAll("button").forEach(b=>b.onclick=async()=>{if(b.dataset.a==="y")await remSet(true,"19:00");else LS.set("cad.reminder",{...remCfg(),asked:true});ar.remove();});}
+};
+const _account=account;
+account=function(){
+ _account();
+ const box=app.querySelector(".acctbox");if(!box)return;const rc=remCfg();
+ let h=`<hr class="sep"><h2 class="h3">${U("helpT")}</h2><div class="links"><a class="btn ghost" href="${mailto(U("fbSubj"))}">${U("fb")}</a><a class="btn ghost" href="${bugMail()}">${U("bug")}</a><a class="btn ghost" href="#about">${U("about")}</a></div>`;
+ if(NATIVE){
+  h+=`<hr class="sep"><h2 class="h3">🔔 ${U("remT")}</h2><p class="muted">${U("remSub")}</p><div class="setrow"><label class="sw"><input type="checkbox" id="rem-on" ${rc.on?"checked":""}> ${U("remOn")}</label><label class="tm">${U("remTime")} <input type="time" id="rem-t" value="${esc(rc.t)}"></label></div>`;
+  h+=`<hr class="sep"><h2 class="h3">📊 ${U("statT")}</h2><p class="muted">${U("statSub")}</p><label class="sw"><input type="checkbox" id="stat-on" ${statsOn()?"checked":""}> ${U("statOn")}</label>`;
+ }
+ const priv=box.querySelector("a[href='"+PRIVACY_URL+"']");const anchor=priv?priv.parentElement:null;
+ if(anchor)anchor.insertAdjacentHTML("beforebegin",h);else box.insertAdjacentHTML("beforeend",h);
+ const ro=document.getElementById("rem-on"),rt=document.getElementById("rem-t");
+ if(ro){ro.onchange=async()=>{const ok=await remSet(ro.checked,rt.value);if(ro.checked&&!ok)ro.checked=false;if(!ro.checked)toast(U("remOff"));};rt.onchange=async()=>{if(ro.checked)await remSet(true,rt.value);else LS.set("cad.reminder",{...remCfg(),t:rt.value});};}
+ const so=document.getElementById("stat-on");if(so)so.onchange=async()=>{LS.set("cad.stats",so.checked);await statsApply();};
+};
+const _saveScore=saveScore;
+saveScore=function(n,s){_saveScore(n,s);markActive();const l=L[n-1];track("quiz_done",{lesson:n,score:s,passed:l&&s>=need(l)?1:0});setTimeout(()=>badgeCheck(),1600);};
+const _route=route;
+route=function(){
+ const h=location.hash.slice(1);
+ if(h!=="game"&&GAME){clearInterval(GAME.timer);GAME=null;}
+ if(h==="game")gameHome();
+ else if(h==="final")finalView();
+ else if(h==="certificate")certView();
+ else if(h==="badges")badgesView();
+ else if(h==="about")aboutView();
+ else{_route();if(/^lektion-\d+$/.test(h)){markActive();track("lesson_open",{lesson:+h.split("-")[1]});}trackScreen(h.replace(/-\d+$/,"")||"home");return;}
+ acctBadge();document.documentElement.lang=lang;document.documentElement.dir=LANGS[lang].dir;
+ document.getElementById("lang-flag").textContent=LANGS[lang].flag;document.getElementById("lang-code").textContent=LANGS[lang].code;
+ document.querySelectorAll("#lang-menu button").forEach(b=>b.setAttribute("aria-checked",b.dataset.l===lang));document.getElementById("foot").textContent=U("foot");
+ trackScreen(h);
+};
+/* startup tasks for the new features (Android) */
+(async function(){
+ if(!NATIVE)return;
+ try{const i=await plug("App").getInfo();APP_VERSION=i.version+(i.build?` (${i.build})`:"");}catch(e){}
+ try{await WELCOME_DONE;}catch(e){}
+ try{const c=await plug("AdMob").requestConsentInfo();STAT_EEA=c&&c.privacyOptionsRequirementStatus==="REQUIRED";LS.set("cad.eea",STAT_EEA);}catch(e){}
+ await statsApply();
+ const rc=remCfg();if(rc.on)remApply(rc,false);
+ if(location.hash===""||location.hash==="#")route();
+})();
 
 /* ======================= ROUTER ======================= */
 function route(){
